@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ruleset name="Capital S, Dangit! ruleset">
+	<description>Sniffs for Capital S, Dangit!.</description>
+
+	<!-- What to scan -->
+	<file>.</file>
+
+	<!-- How to scan -->
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<arg name="parallel" value="8"/>
+
+	<!-- Rules: Check PHP version compatibility -->
+	<config name="testVersion" value="5.2-"/>
+	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Rules: WordPress Coding Standards -->
+	<config name="minimum_supported_wp_version" value="4.7"/>
+	<rule ref="WordPress">
+		<exclude name="WordPress.VIP"/>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="capital_S_,capitalize_S_"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="capital-s-dangit"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Some rules shouldn't be used for tests -->
+	<rule ref="Squiz.Commenting.FunctionComment.Missing">
+		<exclude-pattern>/tests/</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.VariableComment.Missing">
+		<exclude-pattern>/tests/</exclude-pattern>
+	</rule>
+</ruleset>

@@ -1,0 +1,22 @@
+{
+	"name": "dimadin/capital-s-dangit",
+	"description": "Forever eliminate “Javascript” from the planet.",
+	"homepage": "https://milandinic.com/wordpress/plugins/capital-s-dangit/",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Milan Dinić",
+			"email": "milan@srpski.biz",
+			"homepage": "https://milandinic.com/"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/dimadin/capital-s-dangit/issues",
+		"source": "https://github.com/dimadin/capital-s-dangit"
+	},
+	"require": {
+		"php": ">=5.2.4",
+		"composer/installers": "~1.0"
+	}
+}
